@@ -109,16 +109,14 @@ class Module001ViewModel : MvpPresenter<Module001View>() {
     fun getBufferNumbers() {
         val list = ArrayList<String>()
 
-        Observable.create(ObservableOnSubscribe<List<Int>>
-        { emitter -> emitter.onNext(MockNumbers.generateList()) })
-            .buffer(3, TimeUnit.SECONDS)
-            .doOnNext {
-                Log.i("Logcat", "Got: $it")
-                list.add(it.toString())
-                viewState.setBufferNumbers(list)
-            }
+        Observable.intervalRange(1, 12, 1, 1, TimeUnit.SECONDS)
+            .map { "Number $it" }
+            .buffer(3)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe()
+            .subscribe { result ->
+                list.addAll(result)
+                viewState.setMapNumbers(list)
+            }
     }
 }
