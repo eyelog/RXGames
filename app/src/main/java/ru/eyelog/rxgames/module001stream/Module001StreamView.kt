@@ -1,8 +1,8 @@
-package ru.eyelog.rxgames.module001
+package ru.eyelog.rxgames.module001stream
 
 import com.arellomobile.mvp.MvpView
 
-interface Module001View : MvpView{
+interface Module001StreamView : MvpView{
 
     fun setRandomNumbers(numbers: List<Int>)
 

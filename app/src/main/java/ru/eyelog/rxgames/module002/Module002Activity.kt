@@ -15,15 +15,15 @@ class Module002Activity : MvpAppCompatActivity(), Module002View{
         setContentView(R.layout.activity_module_001)
 
 //        btRun.setOnClickListener {
-//            module001ViewModel.getRandomNumbers()
+//            module001SingleViewModel.getRandomNumbers()
 //        }
 //
 //        btRange.setOnClickListener {
-//            module001ViewModel.getRangeNumbers()
+//            module001SingleViewModel.getRangeNumbers()
 //        }
 //
 //        btInterval.setOnClickListener {
-//            module001ViewModel.getIntervalNumbers()
+//            module001SingleViewModel.getIntervalNumbers()
 //        }
     }
 

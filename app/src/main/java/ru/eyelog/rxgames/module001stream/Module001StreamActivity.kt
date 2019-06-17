@@ -1,45 +1,43 @@
-package ru.eyelog.rxgames.module001
+package ru.eyelog.rxgames.module001stream
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_module_001.*
 import ru.eyelog.rxgames.R
 import android.widget.ArrayAdapter
-import android.widget.ListAdapter
 
-class Module001Activity : MvpAppCompatActivity(), Module001View{
+class Module001StreamActivity : MvpAppCompatActivity(), Module001StreamView{
 
     @InjectPresenter
-    lateinit var module001ViewModel: Module001ViewModel
+    lateinit var module001SingleViewModel: Module001StreamViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_module_001)
 
         btRun.setOnClickListener {
-            module001ViewModel.getRandomNumbers()
+            module001SingleViewModel.getRandomNumbers()
         }
 
         btRange.setOnClickListener {
-            module001ViewModel.getRangeNumbers()
+            module001SingleViewModel.getRangeNumbers()
         }
 
         btInterval.setOnClickListener {
-            module001ViewModel.getIntervalNumbers()
+            module001SingleViewModel.getIntervalNumbers()
         }
 
         btFromCallable.setOnClickListener {
-            module001ViewModel.getFromCallableNumbers()
+            module001SingleViewModel.getFromCallableNumbers()
         }
 
         btMap.setOnClickListener {
-            module001ViewModel.getMapNumbers()
+            module001SingleViewModel.getMapNumbers()
         }
 
         btBuffer.setOnClickListener {
-            module001ViewModel.getBufferNumbers()
+            module001SingleViewModel.getBufferNumbers()
         }
     }
 

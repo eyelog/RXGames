@@ -25,8 +25,15 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/bt001"
-                    android:text="001 Basics"
+                    android:id="@+id/bt001Single"
+                    android:text="001 Basics (Single object)"
+                    android:layout_margin="10dp"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt001Stream"
+                    android:text="001 Basics (Stream)"
                     android:layout_margin="10dp"/>
 
         </LinearLayout>

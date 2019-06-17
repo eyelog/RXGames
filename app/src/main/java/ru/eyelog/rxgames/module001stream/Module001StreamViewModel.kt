@@ -1,24 +1,18 @@
-package ru.eyelog.rxgames.module001
+package ru.eyelog.rxgames.module001stream
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.functions.Function
-import io.reactivex.rxkotlin.toFlowable
 import io.reactivex.schedulers.Schedulers
-import org.reactivestreams.Subscriber
+import ru.eyelog.rxgames.utils.MockNumbers
 import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
-import ru.eyelog.rxgames.module001.Module001ViewModel.CallableLongAction
-import java.util.function.Consumer
 
 
 @InjectViewState
-class Module001ViewModel : MvpPresenter<Module001View>() {
+class Module001StreamViewModel : MvpPresenter<Module001StreamView>() {
 
     // Просто генерим рандомный список чисел
     @SuppressLint("CheckResult")
@@ -105,18 +99,22 @@ class Module001ViewModel : MvpPresenter<Module001View>() {
             }
     }
 
+    // С помощью команды buffer фасуем данные из общего списка
     @SuppressLint("CheckResult")
     fun getBufferNumbers() {
         val list = ArrayList<String>()
 
-        Observable.intervalRange(1, 12, 1, 1, TimeUnit.SECONDS)
-            .map { "Number $it" }
+        val observable = Observable
+            .fromIterable(MockNumbers.generateList())
             .buffer(3)
+            .map { it.toString() }
+            .doOnNext { list.add(it) }
+
+        observable
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { result ->
-                list.addAll(result)
-                viewState.setMapNumbers(list)
+            .subscribe{
+                viewState.setBufferNumbers(list)
             }
     }
 }

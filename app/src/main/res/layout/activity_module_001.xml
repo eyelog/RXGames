@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".module001.Module001Activity"
+        tools:context=".module001single.Module001SingleActivity"
         android:orientation="vertical">
 
     <TableLayout
@@ -16,19 +16,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Just random"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btRun" android:layout_weight="1"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Range"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btRange" android:layout_weight="1"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Interval"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btInterval" android:layout_weight="1"/>
         </TableRow>
 
@@ -37,20 +37,77 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="fromCallable"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btFromCallable" android:layout_weight="1"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Map"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btMap" android:layout_weight="1"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Buffer"
-                    android:layout_margin="10dp"
+                    android:layout_margin="3dp"
                     android:id="@+id/btBuffer" android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btTake" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Skip"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btSkip" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Distinct"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btDistinct" android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btFilter" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zip"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btZip" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Merge"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btMerge" android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take until"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btTakeUntil" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btAll" android:layout_weight="1"/>
         </TableRow>
     </TableLayout>
 
