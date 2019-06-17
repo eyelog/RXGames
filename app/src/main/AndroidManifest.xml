@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".module001single.Module001SingleActivity"/>
-        <activity android:name=".module001stream.Module001StreamActivity"/>
         <activity android:name=".module002.Module002Activity"/>
     </application>
 
