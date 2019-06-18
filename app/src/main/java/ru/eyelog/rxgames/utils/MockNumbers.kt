@@ -12,7 +12,7 @@ class MockNumbers{
         fun generateList():List<Int>{
 
             val numbers = ArrayList<Int>()
-            for (i in 0..30){
+            for (i in 0..15){
                 numbers.add((0..300).random())
             }
             return numbers

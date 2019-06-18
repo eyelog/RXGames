@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.eyelog.rxgames.module001single.Module001SingleActivity
-import ru.eyelog.rxgames.module001stream.Module001StreamActivity
+import ru.eyelog.rxgames.module002.Module002Activity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bt001Stream.setOnClickListener {
-            val intent = Intent(this, Module001StreamActivity::class.java)
+            val intent = Intent(this, Module002Activity::class.java)
             startActivity(intent)
         }
     }
