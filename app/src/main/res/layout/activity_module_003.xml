@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".module001single.Module001SingleActivity"
+        android:orientation="vertical">
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FlatMap"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btFlatMap" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Income Object"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btIncomeObj" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Outcome Object"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btOutcomeObj" android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FlatMap list"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btFlatMapList" android:layout_weight="1"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FlatMap two lists"
+                    android:layout_margin="3dp"
+                    android:id="@+id/btFlatMapTwoLists" android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:id="@+id/listView"/>
+</LinearLayout>

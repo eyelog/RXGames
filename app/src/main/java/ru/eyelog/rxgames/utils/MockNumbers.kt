@@ -1,21 +1,27 @@
 package ru.eyelog.rxgames.utils
 
-import java.util.concurrent.TimeUnit
+class MockNumbers {
 
-class MockNumbers{
-
-    companion object{
-        fun generateNumber():Int{
+    companion object {
+        fun generateNumber(): Int {
             return (0..300).random()
         }
 
-        fun generateList():List<Int>{
+        fun generateList(limit: Int): List<Int> {
 
             val numbers = ArrayList<Int>()
-            for (i in 0..15){
+            for (i in 0..limit) {
                 numbers.add((0..300).random())
             }
             return numbers
+        }
+
+        fun generateIncomeObject(limit: Int): ObjIncome {
+            return ObjIncome(
+                15,
+                "Some Name",
+                generateList(limit)
+            )
         }
     }
 }

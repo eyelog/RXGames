@@ -13,14 +13,14 @@ import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 
 @InjectViewState
-class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
+class Module001SinglePresenter : MvpPresenter<Module001SingleView>() {
 
     // Просто генерим рандомный список чисел
     @SuppressLint("CheckResult")
     fun getRandomNumbers() {
 
         Observable.create(ObservableOnSubscribe<List<Int>>
-        { emitter -> emitter.onNext(MockNumbers.generateList()) })
+        { emitter -> emitter.onNext(MockNumbers.generateList(15)) })
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { result -> viewState.setRandomNumbers(result) }
@@ -82,7 +82,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
             e.printStackTrace()
         }
 
-        return MockNumbers.generateList()
+        return MockNumbers.generateList(15)
     }
 
     // Преобразовываем Int в String с помощью map
@@ -91,7 +91,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .map(mapperIntToString)
 //            .map { "Number $it" }
             .doOnNext { list.add(it) }
@@ -112,7 +112,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .buffer(3)
             .map { it.toString() }
             .doOnNext { list.add(it) }
@@ -131,7 +131,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .take(3)
             .map { it.toString() }
             .doOnNext { list.add(it) }
@@ -150,7 +150,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .skip(3)
             .map { it.toString() }
             .doOnNext { list.add(it) }
@@ -169,7 +169,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .distinct()
             .map { it.toString() }
             .doOnNext { list.add(it) }
@@ -188,7 +188,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .map { it.toString() }
             .filter { it.contains("5") }
             .doOnNext { list.add(it) }
@@ -207,10 +207,10 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observableFirst = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .mergeWith(observableFirst)
             .map { it.toString() }
             .doOnNext { list.add(it) }
@@ -229,10 +229,10 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observableFirst = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .zipWith(observableFirst, zipMapper)
             .doOnNext { list.add(it) }
 
@@ -254,7 +254,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .map { it.toString() }
             .takeUntil { it.contains("5") }
             .doOnNext { list.add(it) }
@@ -273,7 +273,7 @@ class Module001SingleViewModel : MvpPresenter<Module001SingleView>() {
         val list = ArrayList<String>()
 
         val observable = Observable
-            .fromIterable(MockNumbers.generateList())
+            .fromIterable(MockNumbers.generateList(15))
             .all{ it > 150 }
             .doOnSuccess {
                 list.add("got")

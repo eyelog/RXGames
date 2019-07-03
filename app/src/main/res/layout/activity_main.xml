@@ -26,14 +26,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/bt001Single"
-                    android:text="001 Basics (Single object)"
+                    android:text="001 Basics"
                     android:layout_margin="10dp"/>
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/bt001Stream"
+                    android:id="@+id/bt002Stream"
                     android:text="002 Cold and Hot Observable"
+                    android:layout_margin="10dp"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt003FlatMap"
+                    android:text="003 FlatMap"
                     android:layout_margin="10dp"/>
 
         </LinearLayout>

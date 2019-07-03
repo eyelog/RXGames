@@ -10,66 +10,66 @@ import android.widget.ArrayAdapter
 class Module001SingleActivity : MvpAppCompatActivity(), Module001SingleView{
 
     @InjectPresenter
-    lateinit var module001SingleViewModel: Module001SingleViewModel
+    lateinit var module001SinglePresenter: Module001SinglePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_module_001)
 
         btRun.setOnClickListener {
-            module001SingleViewModel.getRandomNumbers()
+            module001SinglePresenter.getRandomNumbers()
         }
 
         btRange.setOnClickListener {
-            module001SingleViewModel.getRangeNumbers()
+            module001SinglePresenter.getRangeNumbers()
         }
 
         btInterval.setOnClickListener {
-            module001SingleViewModel.getIntervalNumbers()
+            module001SinglePresenter.getIntervalNumbers()
         }
 
         btFromCallable.setOnClickListener {
-            module001SingleViewModel.getFromCallableNumbers()
+            module001SinglePresenter.getFromCallableNumbers()
         }
 
         btMap.setOnClickListener {
-            module001SingleViewModel.getMapNumbers()
+            module001SinglePresenter.getMapNumbers()
         }
 
         btBuffer.setOnClickListener {
-            module001SingleViewModel.getBufferNumbers()
+            module001SinglePresenter.getBufferNumbers()
         }
 
         btTake.setOnClickListener {
-            module001SingleViewModel.getTakeNumbers()
+            module001SinglePresenter.getTakeNumbers()
         }
 
         btSkip.setOnClickListener {
-            module001SingleViewModel.getSkipNumbers()
+            module001SinglePresenter.getSkipNumbers()
         }
 
         btDistinct.setOnClickListener {
-            module001SingleViewModel.getDistinctNumbers()
+            module001SinglePresenter.getDistinctNumbers()
         }
 
         btFilter.setOnClickListener {
-            module001SingleViewModel.getFilterNumbers()
+            module001SinglePresenter.getFilterNumbers()
         }
 
         btMerge.setOnClickListener {
-            module001SingleViewModel.getMergeNumbers()
+            module001SinglePresenter.getMergeNumbers()
         }
 
         btZip.setOnClickListener {
-            module001SingleViewModel.getZipNumbers()
+            module001SinglePresenter.getZipNumbers()
         }
 
         btTakeUntil.setOnClickListener {
-            module001SingleViewModel.getTakeUntilNumbers()
+            module001SinglePresenter.getTakeUntilNumbers()
         }
 
         btAll.setOnClickListener {
-            module001SingleViewModel.getAllNumbers()
+            module001SinglePresenter.getAllNumbers()
         }
     }
 

@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
-import kotlinx.android.synthetic.main.activity_module_001.*
 import kotlinx.android.synthetic.main.activity_module_002.*
 import ru.eyelog.rxgames.R
 
 class Module002Activity : MvpAppCompatActivity(), Module002View{
 
     @InjectPresenter
-    lateinit var module002ViewModel: Module002ViewModel
+    lateinit var module002Presenter: Module002Presenter
 
     val numbersLeft = ArrayList<String>()
     val numbersRight = ArrayList<String>()
@@ -23,31 +22,31 @@ class Module002Activity : MvpAppCompatActivity(), Module002View{
         btCold.setOnClickListener {
             numbersLeft.clear()
             numbersRight.clear()
-            module002ViewModel.getColdNumbers()
+            module002Presenter.getColdNumbers()
         }
 
         btHot.setOnClickListener {
             numbersLeft.clear()
             numbersRight.clear()
-            module002ViewModel.getHotNumbers()
+            module002Presenter.getHotNumbers()
         }
 
         btReplay.setOnClickListener {
             numbersLeft.clear()
             numbersRight.clear()
-            module002ViewModel.getReplayNumbers()
+            module002Presenter.getReplayNumbers()
         }
 
         btRefCount.setOnClickListener {
             numbersLeft.clear()
             numbersRight.clear()
-            module002ViewModel.getRefCountNumbers()
+            module002Presenter.getRefCountNumbers()
         }
 
         btCache.setOnClickListener {
             numbersLeft.clear()
             numbersRight.clear()
-            module002ViewModel.getCacheNumbers()
+            module002Presenter.getCacheNumbers()
         }
     }
 

@@ -13,7 +13,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 
 @InjectViewState
-class Module002ViewModel : MvpPresenter<Module002View>(){
+class Module002Presenter : MvpPresenter<Module002View>(){
 
     // Каждый подписчик получает весь поток с первого до последнего элемента
     fun getColdNumbers(){

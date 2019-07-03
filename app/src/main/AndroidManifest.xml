@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".module001single.Module001SingleActivity"/>
         <activity android:name=".module002.Module002Activity"/>
+        <activity android:name=".module003.Module003Activity"/>
     </application>
 
 </manifest>
