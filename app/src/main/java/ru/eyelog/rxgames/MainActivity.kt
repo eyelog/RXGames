@@ -28,5 +28,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Module003Activity::class.java)
             startActivity(intent)
         }
+
+        bt003FlatMap.setOnClickListener {
+            val intent = Intent(this, Module003Activity::class.java)
+            startActivity(intent)
+        }
     }
 }
